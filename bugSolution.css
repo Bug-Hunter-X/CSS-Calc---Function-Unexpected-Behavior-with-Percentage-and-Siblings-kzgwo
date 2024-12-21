@@ -1,0 +1,18 @@
+The solution involves making the parent's width explicit or using viewport units (`vw`) for more consistent results.  Here's an example:
+
+```css
+.container {
+  width: 50%; /* or width: 50vw; for viewport-relative width */
+  box-sizing: border-box; /* If you have padding or border on the container */
+}
+
+.parent {
+  width: 100%; /* Ensure parent takes full available width */
+}
+
+.sibling {
+  width: calc(50% - 10px); /* Calculation is now relative to the parent's full width */
+}
+```
+
+By ensuring the parent element occupies the full width, the calculation becomes more predictable. Alternatively, using `vw` units ensures the percentage is always relative to the viewport and not subject to the variability of parent widths.
