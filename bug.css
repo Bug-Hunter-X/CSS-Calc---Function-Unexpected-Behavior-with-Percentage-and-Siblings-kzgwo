@@ -1,0 +1,13 @@
+The following CSS code snippet demonstrates a potential issue with unexpected behavior when using the `calc()` function with percentage values and sibling selectors.
+
+```css
+.container {
+  width: 50%;
+}
+
+.sibling {
+  width: calc(50% - 10px);
+}
+```
+
+The issue arises when the sibling element's width is calculated based on the parent's width (which is 50% of the viewport).  The `calc()` function correctly subtracts 10px, but the result might be unexpected if the container element itself isn't taking up the full width of its parent.
